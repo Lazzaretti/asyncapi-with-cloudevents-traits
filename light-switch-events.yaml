@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://asyncapi.com/schema-store/3.0.0-without-$id.json
+asyncapi: 3.0.0
+info:
+  title: Light Switch Events
+  version: 1.0.0
+  description: Informes about light swich changes.
+operations:
+  onOfficeLightSwitchChanged:
+    title: Office light switch was triggered
+    channel:
+      $ref: '#/channels/officeLightSwitchChanged'
+    action: receive
+
+channels:
+  officeLightSwitchChanged:
+    address: 'lightswitch.office.changed'
+    title: Office light switch changes
+    messages:
+      lightSwitchChanged:
+        $ref: '#/components/messages/lightSwitchChanged'
+
+components:
+  messages:
+    lightSwitchChanged:
+      description: Light switch was triggered
+      payload:
+        type: object
+        properties:
+          lightSwitchId:
+            type: integer
+            examples:
+            - 1
+          position:
+            type: string
+            enum:
+            - ON
+            - OFF

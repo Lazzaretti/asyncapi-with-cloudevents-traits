@@ -1,0 +1,17 @@
+name: Lint Specs
+
+on:
+  push:
+
+
+jobs:
+  ascynapi:
+    runs-on: [ ubuntu-latest ]
+    name: lint AsyncAPI ${{ matrix.api }}
+    steps:
+    - uses: actions/checkout@v4
+    - name: Validate ${{ matrix.api }}
+      uses: asyncapi/github-action-for-cli@v3.1.1
+      with:
+        command: validate
+        filepath: ./light-switch-events.yaml

@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://asyncapi.com/schema-store/3.0.0-without-$id.json
 asyncapi: 3.0.0
 info:
-  title: Light Switch Events
+  title: Light Switch Events With CloudEvents as Headers (Binary Mode)
   version: 1.0.0
   description: Informes about light swich changes.
 operations:
@@ -22,7 +22,9 @@ channels:
 components:
   messages:
     lightSwitchChanged:
-      description: Light switch was triggered
+      description: Light switch was triggered event with CloudEvents headers
+      traits:
+      - $ref: 'https://raw.githubusercontent.com/microcks/microcks-quickstarters/main/cloud/cloudevents/cloudevents-v1.0.1-asyncapi-trait.yml'
       payload:
         type: object
         properties:

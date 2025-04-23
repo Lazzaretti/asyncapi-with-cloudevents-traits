@@ -10,7 +10,7 @@ jobs:
     name: lint AsyncAPI
     strategy:
       matrix:
-        file: [./light-switch-events-binary-mode.yaml, light-switch-events-structured-json.yaml]
+        file: [./light-switch-events-binary-mode.yaml, ./light-switch-events-structured-json.yaml]
     steps:
     - uses: actions/checkout@v4
     - name: Validate

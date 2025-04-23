@@ -7,11 +7,14 @@ on:
 jobs:
   ascynapi:
     runs-on: [ ubuntu-latest ]
-    name: lint AsyncAPI ${{ matrix.api }}
+    name: lint AsyncAPI
+    strategy:
+      matrix:
+        file: [./light-switch-events-binary-mode.yaml, light-switch-events-structured-json.yaml]
     steps:
     - uses: actions/checkout@v4
-    - name: Validate ${{ matrix.api }}
+    - name: Validate
       uses: asyncapi/github-action-for-cli@v3.1.1
       with:
         command: validate
-        filepath: ./light-switch-events.yaml
+        filepath: ${ matrix.file }

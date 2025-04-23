@@ -1,4 +1,4 @@
-# AsyncAPI and CloudEvents with Traits
+# AsyncAPI with CloudEvents Traits
 
 This repository describes how CloudEvents can be defined in AsyncAPI v3.
 

@@ -24,7 +24,7 @@ components:
     lightSwitchChanged:
       description: Light switch was triggered event with CloudEvents headers
       traits:
-      - $ref: 'https://raw.githubusercontent.com/microcks/microcks-quickstarters/main/cloud/cloudevents/cloudevents-v1.0.1-asyncapi-trait.yml'
+      - $ref: 'https://raw.githubusercontent.com/Lazzaretti/asyncapi-with-cloudevents-traits/main/traits/cloudevents-headers-kafka-binary.yaml'
       payload:
         type: object
         properties:
